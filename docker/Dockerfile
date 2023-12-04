@@ -17,6 +17,9 @@ RUN \
   elif [ `ls -1q *.txt | wc -l` == 1 ]; \
     then pip install -r *.txt; \
   fi
+  
+# Install net tools
+yum install net-tools
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
