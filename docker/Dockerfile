@@ -10,6 +10,8 @@ WORKDIR /projects
 # Copy the content of the local src directory to the working directory
 COPY . .
 
+LABEL run="docker run -it --name NAME --privileged --ipc=host --net=host --pid=host -e HOST=/host -e NAME=NAME -e IMAGE=IMAGE -v /run:/run -v /var/log:/var/log -v /etc/machine-id:/etc/machine-id -v /etc/localtime:/etc/localtime -v /:/host IMAGE"
+
 RUN INSTALL_PKGS="\
   bash-completion \
   bc \
