@@ -19,7 +19,7 @@ RUN \
   fi
   
 # Install net tools
-yum install net-tools
+pip install network-tools
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
