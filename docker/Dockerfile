@@ -42,7 +42,7 @@ RUN INSTALL_PKGS="\
   tcpdump \
   vim-enhanced \
   xfsprogs \
-  " && yum -y install $INSTALL_PKGS && rpm -V --nosize --nofiledigest --nomtime --nomode $INSTALL_PKGS && yum clean all
+  " && sudo yum -y install $INSTALL_PKGS && rpm -V --nosize --nofiledigest --nomtime --nomode $INSTALL_PKGS && yum clean all
   
 # Install any dependencies
 RUN \
