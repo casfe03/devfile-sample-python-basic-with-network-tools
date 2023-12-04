@@ -10,6 +10,40 @@ WORKDIR /projects
 # Copy the content of the local src directory to the working directory
 COPY . .
 
+RUN INSTALL_PKGS="\
+  bash-completion \
+  bc \
+  bind-utils \
+  blktrace \
+  crash \
+  e2fsprogs \
+  ethtool \
+  file \
+  git \
+  glibc-utils \
+  hwloc \
+  iotop \
+  iproute \
+  iputils \
+  less \
+  ltrace \
+  mailx \
+  net-tools \
+  netsniff-ng \
+  nmap-ncat \
+  numactl \
+  numactl-devel \
+  parted \
+  pciutils \
+  psmisc \
+  screen \
+  strace \
+  sysstat \
+  tcpdump \
+  vim-enhanced \
+  xfsprogs \
+  " && yum -y install $INSTALL_PKGS && rpm -V --nosize --nofiledigest --nomtime --nomode $INSTALL_PKGS && yum clean all
+  
 # Install any dependencies
 RUN \
   if [ -f requirements.txt ]; \
